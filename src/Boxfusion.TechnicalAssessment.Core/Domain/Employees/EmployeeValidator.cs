@@ -14,7 +14,7 @@ namespace Boxfusion.TechnicalAssessment.Domain.Employees
             RuleFor(x => x.LastName).NotEmpty().WithMessage("Last name is required");
             RuleFor(x => x).Custom((entity, context) => {
 
-                if(ValidateEmail(entity.EmailAddress))
+                if(!ValidateEmail(entity.EmailAddress))
                 {
                     context.AddFailure("Email address is not valid");
                 }
@@ -22,7 +22,7 @@ namespace Boxfusion.TechnicalAssessment.Domain.Employees
                 var repo = IocManager.Instance.Resolve<IRepository<Employee, string>>();
                 var exist = repo.GetAllList().Any(x => x.EmailAddress == entity.EmailAddress);
 
-                if (!exist)
+                if (exist)
                 {
                     context.AddFailure("Email address already exists");
                 }
