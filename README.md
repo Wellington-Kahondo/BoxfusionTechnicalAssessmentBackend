@@ -14,8 +14,8 @@ This project is an Employee Management Web API built using the ABP (Asp.Net Boil
 
 ## Prerequisites
 
-- .NET SDK (version X.X.X or higher)
-- SQL Server (or any other compatible database)
+- .NET SDK
+- SQL Server 
 - Visual Studio or any other IDE supporting .NET development
 
 ## Getting Started
